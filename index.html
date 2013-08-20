@@ -13,23 +13,38 @@
 				  <h1>Video Bitrate Calculator</h1>
 				</div>
 			</div>
-			<div class="row" id="output">
-
+			<div id="output">
 			</div>
 		</div>
 	<script src='js/Ractive.js'></script>
 	<script type="text/Ractive"  id="template">
-	<div class="span12">
-		<form class="form-inline">
-			<label for="videoFileSize">Max video file-size (Mb): </label>
-			<input type="number" class="span1" name="videoFileSize" value='{{videoFileSize}}' maxlength="2">
-			<label for="videoLength">Video Length (Seconds): </label>
-			<input type="number" class="span1" name="videoLength" value='{{videoLength}}' maxlength="4">
-			<strong>Total Bit-rate: {{format(totalBitrate)}}</strong> kbps |
-			<strong>Audio Bit-rate: <span class="text-info">{{format(audioBitrate)}}</span></strong> kbps |
-			<strong>Video Bit-rate: <span class="text-info">{{format(videoBitrate)}}</span></strong> kbps
-		</form>
-	</div>
+		<div class="row">
+			<div class="span12">
+				<label for="videoFileSize">Max video file-size (Mb): </label>
+				<input type="number" class="span1" name="videoFileSize" value='{{videoFileSize}}' maxlength="2">
+			</div>
+		</div>
+		<div class="row">
+			<div class="span12">
+				<label for="videoLength">Video Length (Seconds): </label>
+				<input type="number" class="span1" name="videoLength" value='{{videoLength}}' maxlength="4">
+			</div>
+		</div>
+		<div class="row">
+			<div class="span12">
+				<strong>Total Bit-rate: <span class="badge">{{format(totalBitrate)}}</span></strong> kbps
+			</div>
+		</div>
+		<div class="row">
+			<div class="span12">
+				<strong>Audio Bit-rate: <span class="badge badge-info">{{format(audioBitrate)}}</span></strong> kbps
+			</div>
+		</div>
+		<div class="row">
+			<div class="span12">
+				<strong>Video Bit-rate: <span class="badge badge-info">{{format(videoBitrate)}}</span></strong> kpbs
+			</div>
+		</div>
 	</script>
 	<script src='js/App.js'></script>
 	</body>
