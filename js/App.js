@@ -2,7 +2,6 @@ window.log = function () {
 	if (this.console) console.log(Array.prototype.slice.call(arguments));
 };
 
-
 var ractive = new Ractive({
 	el: '#output',
 	template: '#template',
@@ -19,15 +18,15 @@ var ractive = new Ractive({
 });
 
 ractive.observe('videoFileSize', function () {
-	calculateBitrate()
+	calculateBitrate();
 });
 
 ractive.observe('videoLength', function () {
-	calculateBitrate()
+	calculateBitrate();
 });
 
 ractive.observe('audioBitrate', function () {
-	calculateBitrate()
+	calculateBitrate();
 });
 
 function calculateBitrate() {
