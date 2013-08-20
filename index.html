@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Video Bitrate Calculator</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="page-header">
+				  <h1>Video Bitrate Calculator</h1>
+				</div>
+			</div>
+			<div class="row" id="output">
+
+			</div>
+		</div>
+	<script src='js/Ractive.js'></script>
+	<script type="text/Ractive"  id="template">
+	<div class="span12">
+		<form class="form-inline">
+			<label for="videoFileSize">Max video file-size (Mb): </label>
+			<input type="number" class="span1" name="videoFileSize" value='{{videoFileSize}}' maxlength="2">
+			<label for="videoLength">Video Length (Seconds): </label>
+			<input type="number" class="span1" name="videoLength" value='{{videoLength}}' maxlength="4">
+			<strong>Total Bit-rate: {{format(totalBitrate)}}</strong> kbps
+			<strong>Audio Bit-rate: {{format(audioBitrate)}}</strong> kbps
+			<strong>Video Bit-rate {{format(videoBitrate)}}</strong> kbps
+		</form>
+	</div>
+	</script>
+	<script src='js/App.js'></script>
+	</body>
+</html>
