@@ -25,9 +25,9 @@
 			<input type="number" class="span1" name="videoFileSize" value='{{videoFileSize}}' maxlength="2">
 			<label for="videoLength">Video Length (Seconds): </label>
 			<input type="number" class="span1" name="videoLength" value='{{videoLength}}' maxlength="4">
-			<strong>Total Bit-rate: {{format(totalBitrate)}}</strong> kbps
-			<strong>Audio Bit-rate: {{format(audioBitrate)}}</strong> kbps
-			<strong>Video Bit-rate {{format(videoBitrate)}}</strong> kbps
+			<strong>Total Bit-rate: {{format(totalBitrate)}}</strong> kbps |
+			<strong>Audio Bit-rate: <span class="text-info">{{format(audioBitrate)}}</span></strong> kbps |
+			<strong>Video Bit-rate: <span class="text-info">{{format(videoBitrate)}}</span></strong> kbps
 		</form>
 	</div>
 	</script>
