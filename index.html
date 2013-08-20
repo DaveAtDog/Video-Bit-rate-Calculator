@@ -3,46 +3,60 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>Video Bitrate Calculator</title>
+		<title>Video Bit-rate Calculator</title>
 		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/shame.css">
 	</head>
 	<body>
 		<div class="container">
 			<div class="row">
 				<div class="page-header">
-				  <h1>Video Bitrate Calculator</h1>
+				  <h1>Video Bit-rate Calculator</h1>
 				</div>
 			</div>
 			<div id="output">
 			</div>
 		</div>
 	<script src='js/Ractive.js'></script>
-	<script type="text/Ractive"  id="template">
-		<div class="row">
+	<script type="text/Ractive" id="template">
+		<div class="row gap">
 			<div class="span12">
-				<label for="videoFileSize">Max video file-size (Mb): </label>
-				<input type="number" class="span1" name="videoFileSize" value='{{videoFileSize}}' maxlength="2">
+				<div class="form-inline">
+					<label for="videoFileSize">Max video file-size (Mb): </label>
+					<input type="text" class="span1" name="videoFileSize" value='{{videoFileSize}}' maxlength="4">
+				</div>
+			</div>
+		</div>
+		<div class="row gap">
+			<div class="span12">
+				<div class="form-inline">
+					<label for="videoLength">Video Length (Seconds): </label>
+					<input type="text" class="span1" name="videoLength" value='{{videoLength}}' maxlength="4">
+				</div>
 			</div>
 		</div>
 		<div class="row">
 			<div class="span12">
-				<label for="videoLength">Video Length (Seconds): </label>
-				<input type="number" class="span1" name="videoLength" value='{{videoLength}}' maxlength="4">
+				<form class="form-inline">
+					<strong>Audio:&nbsp;</strong>
+					<label class="radio"><input type='radio' name='{{audioBitrate}}' value='60'> 60 kbps - mono</label>&nbsp;
+					<label class="radio"><input type='radio' name='{{audioBitrate}}' value='80' checked> 80 kbps - mono</label>&nbsp;
+					<label class="radio"><input type='radio' name='{{audioBitrate}}' value='128'> 128 kbps - stereo</label>&nbsp;
+					<label class="radio"><input type='radio' name='{{audioBitrate}}' value='160'> 160 kbps - stereo</label>&nbsp;
+				</form>
 			</div>
 		</div>
 		<div class="row">
-			<div class="span12">
-				<strong>Total Bit-rate: <span class="badge">{{format(totalBitrate)}}</span></strong> kbps
-			</div>
-		</div>
-		<div class="row">
-			<div class="span12">
-				<strong>Audio Bit-rate: <span class="badge badge-info">{{format(audioBitrate)}}</span></strong> kbps
-			</div>
-		</div>
-		<div class="row">
-			<div class="span12">
-				<strong>Video Bit-rate: <span class="badge badge-info">{{format(videoBitrate)}}</span></strong> kpbs
+			<div class="span12 well well-small">
+				<div class="gap">
+					<strong>Total Bit-rate: <span class="label label-info">{{format(totalBitrate)}}</span></strong> kbps
+				</div>
+				<div class="gap">
+					<strong>Audio Bit-rate: <span class="label label-info">{{format(audioBitrate)}}</span></strong> kbps
+				</div>
+				<div>
+					<strong>Video Bit-rate: <span class="label label-info">{{format(videoBitrate)}}</span></strong> kpbs
+				</div>
 			</div>
 		</div>
 	</script>

@@ -26,10 +26,11 @@ ractive.observe('videoLength', function () {
 	calculateBitrate()
 });
 
+ractive.observe('audioBitrate', function () {
+	calculateBitrate()
+});
+
 function calculateBitrate() {
 	ractive.set('totalBitrate', (ractive.data.videoFileSize / ractive.data.videoLength) * 8192);
 	ractive.set('videoBitrate', ractive.data.totalBitrate - ractive.data.audioBitrate);
 }
-
-
-log(ractive);
